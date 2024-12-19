@@ -4,7 +4,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/code/fzf-tab/fzf-tab.plugin.zsh
 
-alias lazy="python3 /Users/ronan.singpurwala/code/lazy-jira-search/main.py"
+alias lazy="python3 ~/code/lazy-jira-search/main.py"
 alias ls="lsd"
 alias grep="grep --color=always"
 alias vf='vim $(fzf)'
