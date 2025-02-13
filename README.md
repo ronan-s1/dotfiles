@@ -9,9 +9,3 @@ brew install git-delta lsd fd ripgrep zsh-autosuggestions zsh-syntax-highlightin
 ```
 git clone https://github.com/Aloxaf/fzf-tab ~/code
 ```
-
-## pre commit
-
-```
-pip3 install pre-commit --break-system-packages && pre-commit install
-```
