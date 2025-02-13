@@ -3,7 +3,7 @@
 ## libs and tools
 
 ```
-brew install git-delta lsd fd ripgrep zsh-autosuggestions zsh-syntax-highlighting fzf bat xh
+brew install starship git-delta lsd fd ripgrep zsh-autosuggestions zsh-syntax-highlighting fzf bat xh
 ```
 
 ```
