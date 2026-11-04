@@ -3,13 +3,28 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(starship init zsh)"
 source <(fzf --zsh)
 
+# zoxide
+eval "$(zoxide init zsh --cmd cd)"
+
+# zf-tab
+zstyle ':completion:*' menu no
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --color=always $realpath'
+zstyle ':fzf-tab:*' switch-group '<' '>'
+
 # Auto suggestions and syntax highlighting
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # fzf tab
 autoload -U compinit; compinit
-source ~/code/fzf-tab/fzf-tab.plugin.zsh
+source ~/code/personal/fzf-tab/fzf-tab.plugin.zsh
+zstyle ':completion:*' menu no
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --color=always $realpath'
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Work related stuff
 if [[ -f ~/.work ]]; then
@@ -18,7 +33,6 @@ fi
 
 # CUSTOM ALIAS
 alias glog='git log --pretty=format:"%C(yellow)%h%Creset -%C(green) %an%Creset, %C(cyan)%ar%Creset: %s"'
-alias lazy="python3 ~/code/lazy-jira-search/main.py"
 alias ls="lsd"
 alias reload="source ~/.zshrc"
 
